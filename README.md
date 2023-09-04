@@ -1,6 +1,6 @@
-# face-detection
+# face-detection and speaker diarization behaviour analysis
 
-Face Detection Project
+Face Detection and Speaker Diarization with behaviour analysis Project
 
 ## Environment setup
 
