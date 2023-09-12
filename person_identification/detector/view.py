@@ -1,3 +1,7 @@
+# Showing boundary color and text color for the identified person
+BOUNDING_BOX_COLOR = "red"
+TEXT_COLOR = "white"
+
 def display_face(draw, bounding_box, name):
     """
     Draws bounding boxes around faces, a caption area, and text captions.

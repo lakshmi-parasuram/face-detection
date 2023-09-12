@@ -2,6 +2,8 @@ import face_recognition
 from pathlib import Path
 import pickle
 
+DEFAULT_ENCODINGS_PATH = Path("output/encodings.pkl")
+
 def train_and_encode_known_faces(
     model: str = "hog", encodings_location: Path = DEFAULT_ENCODINGS_PATH
 ) -> None:

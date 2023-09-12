@@ -17,14 +17,14 @@ def read(f, normalized=False):
     else:
         return a.frame_rate, y
 
-sample_rate, np_array = read('Interview.wav')
+sample_rate, np_array = read('interview.mp3')
 
 input_tensor = torch.from_numpy(np_array).float()
 outputs = diarization_pipeline(
     {"waveform": input_tensor, "sample_rate": sample_rate}
 )
 
-outputs.for_json()["content"]
+data = outputs.for_json()["content"]
 
 """
 [{'segment': {'start': 0.4978125, 'end': 14.520937500000002},
@@ -34,3 +34,9 @@ outputs.for_json()["content"]
   'track': 'A',
   'label': 'SPEAKER_01'}]
 """
+
+for i in range(1, len(timedatastamps)):
+    previous_speaker, previous_end = data[i-1]["label"], data[i-1]["segment"]["end"]
+    curent_speaker, current_start = data[i]["label"], data[i-1]["segment"]["start"]
+    if previous_speaker != curent_speaker and (previous_end - current_start) > 5:
+        print('Threshold reached, flagged for behaviour analysis')

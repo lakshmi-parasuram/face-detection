@@ -21,7 +21,7 @@ def draw_faces(filename, result_list):
 	# show the plot
 	pyplot.show()
 
-filename = '../../data/family.jpg'
+filename = 'image1.jpg'
 # load image from file
 pixels = pyplot.imread(filename)
 # create the detector, using default weights

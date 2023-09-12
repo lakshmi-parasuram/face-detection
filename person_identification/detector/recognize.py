@@ -1,9 +1,13 @@
 import pickle
+from pathlib import Path
+
 import face_recognition
 from PIL import Image, ImageDraw
 from collections import Counter
 
 from detector.view import display_face
+
+DEFAULT_ENCODINGS_PATH = Path("output/encodings.pkl")
 
 def recognize_faces(
     image_location: str,

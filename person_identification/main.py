@@ -10,9 +10,6 @@ from detector.validate import validate
 from detector.recognize import recognize_faces
 
 DEFAULT_ENCODINGS_PATH = Path("output/encodings.pkl")
-# Showing boundary color and text color for the identified person
-BOUNDING_BOX_COLOR = "red"
-TEXT_COLOR = "white"
 
 # Create directories if they don't already exist
 Path("training").mkdir(exist_ok=True)

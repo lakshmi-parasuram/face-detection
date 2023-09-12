@@ -6,7 +6,7 @@ from cv2 import destroyAllWindows
 from cv2 import rectangle
 from cv2 import CascadeClassifier
 # read the image in pixels
-pixels = imread('../../data/family.jpg')
+pixels = imread('image1.jpg')
 # load the CascadeClassifier existing model
 cascadeClassifier = CascadeClassifier('config.xml')
 # here is where we do the face detection

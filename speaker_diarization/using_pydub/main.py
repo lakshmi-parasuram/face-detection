@@ -2,7 +2,7 @@ from pydub import AudioSegment, silence
 import numpy as np
 
 # Load audio file
-audio = AudioSegment.from_wav("interview.wav")
+audio = AudioSegment.from_mp3("interview.mp3")
 
 # Split the stereo audio channels
 interviewer_channel = audio.split_to_mono()[0]
